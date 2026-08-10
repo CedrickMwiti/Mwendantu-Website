@@ -1,2 +1,3 @@
-Connect your live 99.5 FM stream URL (Icecast/Shoutcast) to the <audio> elements in fm.html and js/main.js (modal-fm),
-replacing the placeholder src="assets/audio/995-stream-placeholder.mp3".
+Put your hero background video here as: hero-bg.mp4
+Recommended: 15-30 sec loop, muted, under 8MB, 1920x1080, showing the studio/on-air moments.
+If no video is added, the site automatically shows a styled dark gradient fallback instead.
