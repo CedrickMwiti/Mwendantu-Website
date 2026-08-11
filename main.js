@@ -1,8 +1,6 @@
-/* =========================================================
+
    MWENDANTU MEDIA — main.js
    Shared header/footer injection + site-wide interactivity
-   ========================================================= */
-
 const NAV_LINKS = [
   { href: "index.html", label: "Home", key: "home" },
   { href: "news.html", label: "News", key: "news" },
@@ -117,7 +115,7 @@ const ICONS = {
   play: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>`
 };
 
-/* ---------- Mobile nav toggle ---------- */
+ Mobile nav toggle 
 function bindNavToggle(){
   const toggle = document.getElementById("navToggle");
   const links = document.getElementById("navLinks");
@@ -132,7 +130,7 @@ function bindNavToggle(){
   }));
 }
 
-/* ---------- Live TV / Radio modals ---------- */
+ Live TV / Radio modals
 function buildModals(){
   const wrap = document.createElement("div");
   wrap.innerHTML = `
@@ -192,7 +190,7 @@ function buildModals(){
   });
 }
 
-/* ---------- Reveal on scroll ---------- */
+ Reveal on scroll
 function bindReveal(){
   const items = document.querySelectorAll(".reveal");
   if(!("IntersectionObserver" in window)){ items.forEach(i => i.classList.add("in")); return; }
@@ -202,7 +200,7 @@ function bindReveal(){
   items.forEach(i => io.observe(i));
 }
 
-/* ---------- Back to top ---------- */
+ Back to top
 function bindBackToTop(){
   const btn = document.createElement("button");
   btn.className = "back-to-top";
@@ -215,7 +213,7 @@ function bindBackToTop(){
   btn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 }
 
-/* ---------- Generic tab groups: data-tabs / data-tab-target ---------- */
+Generic tab groups: data-tabs / data-tab-target
 function bindTabGroups(){
   document.querySelectorAll("[data-tabs]").forEach(group => {
     const buttons = group.querySelectorAll("[data-tab]");
@@ -231,7 +229,7 @@ function bindTabGroups(){
   });
 }
 
-/* ---------- Accordion ---------- */
+ Accordion 
 function bindAccordion(){
   document.querySelectorAll(".accordion-trigger").forEach(trigger => {
     trigger.addEventListener("click", () => {
@@ -250,7 +248,7 @@ function bindAccordion(){
   });
 }
 
-/* ---------- Counters ---------- */
+ Counters
 function bindCounters(){
   const counters = document.querySelectorAll("[data-count]");
   if(!counters.length) return;
@@ -273,7 +271,7 @@ function bindCounters(){
   counters.forEach(c => io.observe(c));
 }
 
-/* ---------- Forms (subscribe + contact) — front-end only ---------- */
+ Forms (subscribe + contact) — front-end only 
 function bindForms(){
   document.querySelectorAll("[data-subscribe-form]").forEach(form => {
     form.addEventListener("submit", (e) => {
@@ -293,7 +291,7 @@ function bindForms(){
   }
 }
 
-/* ---------- News filter (news.html) ---------- */
+ News filter (news.html) 
 function bindNewsFilter(){
   const buttons = document.querySelectorAll("[data-news-filter]");
   if(!buttons.length) return;
@@ -311,7 +309,7 @@ function bindNewsFilter(){
   });
 }
 
-/* ---------- Team bio modal (team.html) ---------- */
+ Team bio modal (team.html) 
 function bindTeamModal(){
   const cards = document.querySelectorAll("[data-team-card]");
   if(!cards.length) return;
@@ -344,7 +342,7 @@ function bindTeamModal(){
   });
 }
 
-/* ---------- Init ---------- */
+ Init 
 document.addEventListener("DOMContentLoaded", () => {
   const activeKey = document.body.getAttribute("data-page") || "home";
   injectHeader(activeKey);
